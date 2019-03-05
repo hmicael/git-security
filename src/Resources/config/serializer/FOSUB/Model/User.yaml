@@ -1,0 +1,10 @@
+# /config/serializer/Model.User.yaml
+
+FOS\UserBundle\Model\User:
+    exclusion_policy: ALL
+    properties:
+    id:
+        exclude: false
+    emailCanonical:
+        exclude: false
+        serialized_name: "email"

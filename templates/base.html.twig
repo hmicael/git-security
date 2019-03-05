@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+		  {% for key, messages in app.session.flashbag.all() %}
+		    {% for message in messages %}
+		      <div class="alert alert-{{ key }}">
+		        {{ message|trans({}, 'FOSUserBundle') }}
+		      </div>
+		    {% endfor %}
+		  {% endfor %}
+
+		  {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
+		  {% block fos_user_content %}
+		  {% endblock fos_user_content %}        	
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

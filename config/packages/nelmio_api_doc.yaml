@@ -1,0 +1,23 @@
+nelmio_api_doc:
+    documentation:
+        host: security
+        schemes: [http, https]
+        info:
+            title: Security
+            description: It's a microservice that manages security to other microservice
+            version: 1.0.0
+        default_sections_opened:  false
+        # securityDefinitions:
+        #     Bearer:
+        #         type: apiKey
+        #         description: 'Value: Bearer {jwt}'
+        #         name: Authorization
+        #         in: header
+        # security:
+        #     - Bearer: []            
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/password
+            - ^/profile
+            - ^/register
+            - ^/login

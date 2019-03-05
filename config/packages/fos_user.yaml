@@ -1,0 +1,9 @@
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: api
+    user_class: App\Entity\User
+    from_email:
+        address: "admin@admin.com"
+        sender_name: "admin"
+    service:
+        mailer: user.mailer.rest
